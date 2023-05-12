@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exercice d'éclairage Three.js</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        place-items: center;
+        gap: 15px;
+      }
+      #controlPanel {
+        margin: auto;
+        text-align: center;
+      }
+    </style>
+    <script type="module" src="./Eclairage.js"></script>
+  </head>
+  <body>
+    <div id="controlPanel">
+      <h3>Paramètres d'éclairage</h3>
+      <h4>Lumière directionnelle</h4>
+      <label for="dirLightColor">Couleur:</label>
+      <input type="color" id="dirLightColor" value="#ffffff" />
+      <br />
+      <label for="dirLightIntensity">Intensité:</label>
+      <input
+        type="range"
+        id="dirLightIntensity"
+        min="0"
+        max="2"
+        step="0.1"
+        value="1"
+      />
+      <br />
+      <h4>Lumière ambiante</h4>
+      <label for="ambientLightColor">Couleur:</label>
+      <input type="color" id="ambientLightColor" value="#ffffff" />
+      <br />
+      <label for="ambientLightIntensity">Intensité:</label>
+      <input
+        type="range"
+        id="ambientLightIntensity"
+        min="0"
+        max="2"
+        step="0.1"
+        value="0.5"
+      />
+
+      <h4>Changer le type d'éclairage</h4>
+      <select id="lightType">
+        <option value="directional" selected>Directional Light</option>
+        <option value="point">Point Light</option>
+        <option value="spot">Spot Light</option>
+        <option value="hemisphere">Hemisphere Light</option>
+        <option value="rectArea">RectArea Light</option>
+      </select>
+
+      <h4>Changer le type de matériau</h4>
+      <select id="materialType">
+        <option value="lambert" selected>MeshLambertMaterial</option>
+        <option value="phong">MeshPhongMaterial</option>
+      </select>
+
+      <h4>Changer l'objet de base</h4>
+      <select id="baseObject">
+        <option value="torus" selected>Torus</option>
+        <option value="cone">Cone</option>
+        <option value="sphere">Sphere</option>
+        <option value="cube">Cube</option>
+      </select>
+    </div>
+  </body>
+</html>

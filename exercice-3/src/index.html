@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercice 3</title>
+    <script type="module" src="./script.js"></script>
+    <style>
+      button {
+        border-radius: 12px;
+  background-color: blueviolet; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+      input {
+        border-radius: 12px;
+        font-size: 20px;
+        padding: 10px;
+        margin: 5px;
+        outline: none;
+      }
+
+      input::placeholder {
+        color: #1c87c9;
+        opacity: 1;
+      }
+      input:placeholder-shown {
+        border: 1px solid #095484;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <form id="balloonaddr">
+      <input placeholder="x" type="number" name="x" id="x"/>
+      <input placeholder="y" type="number" name="y" id="y" />
+      <input placeholder="rayon" type="number" name="r" id="r" />
+      <input placeholder="couleur" type="number" name="c" id="c" />
+      <button>Ajouter !</button>
+    </form>
+  </body>
+</html>

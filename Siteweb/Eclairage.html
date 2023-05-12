@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Explication: Eclairage</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" type="image/gif" href="logo.png">
+</head>
+<body>
+	<h1>Eclairage avec Three.js   </h1>
+	<div class="container-Explication">
+Ce code utilise Three.js pour créer une scène 3D avec deux caméras et montre différentes capacités de la bibliothèque. Voici un résumé détaillé des fonctionnalités du code :
+<ol>
+<li> Importation des modules nécessaires : THREE et RectAreaLightHelper.</li>
+<li> Initialisation des variables globales et des constantes comme la scène, les caméras, le renderer, les objets 3D et les lumières.
+	<li> Création de la scène, ajout d'objets 3D, de lumières et de deux caméras :
+   <ul> - camera: PerspectiveCamera avec un champ de vision de 75 degrés, un aspect ratio basé sur la taille de la fenêtre, et une distance de clipping proche et lointaine de 0.1 et 1000.</ul>
+   <ul> - camera2: Une autre PerspectiveCamera avec les mêmes propriétés que la première caméra, mais positionnée différemment et orientée vers la position de la scène.</ul>
+</li>
+<li>Ajout d'aides visuelles à la scène pour montrer le type de projection (frustum) de la caméra, la direction de la lumière directionnelle et les axes du monde.</li>
+<li> Fonctions pour changer le type de lumière, le type de matériau et l'objet de base.</li>
+<li> Ecouteurs d'événements pour mettre à jour la couleur, l'intensité des lumières, et pour changer le type de lumière, le type de matériau et l'objet de base en fonction des interactions de l'utilisateur.</li>
+<li> Fonction animate() pour animer la scène en faisant tourner les objets 3D et en rendant la scène avec les deux caméras.</li>
+<li> Fichier HTML pour afficher le rendu et fournir des éléments de contrôle pour interagir avec la scène.</li>
+</ol>
+Dans ce code, deux renderers WebGL sont créés pour rendre la scène avec deux caméras différentes, ce qui permet de montrer deux points de vue de la scène en même temps. Les objets 3D tels que le tore et le cône sont animés en modifiant leur rotation dans la fonction animate(). Les lumières directionnelle et ambiante sont ajoutées à la scène et peuvent être modifiées par l'utilisateur en utilisant les éléments de contrôle du fichier HTML.
+
+Les écouteurs d'événements sont utilisés pour détecter les changements dans les éléments de contrôle et mettre à jour la scène en conséquence. Par exemple, la fonction changeLightType() est appelée lorsque l'utilisateur change le type de lumière à l'aide de l'élément de contrôle "lightType". De même, les fonctions changeMaterialType() et changeBaseObject() sont appelées lorsque l'utilisateur change le type de matériau et l'objet de base, respectivement.
+	</div>
+
+</body>
+</html>

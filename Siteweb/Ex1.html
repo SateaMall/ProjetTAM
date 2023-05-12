@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Explication: Un aperçu de canvas</title>
+	<link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/gif" href="logo.png">
+</head>
+<body>
+	<h1>Explication: Un aperçu de canvas.    </h1>
+	<div class="container-Explication">
+        Le code utilise l'élément HTML5 canvas et le contexte de dessin 2D pour créer une illustration dans la page web. Voici une explication ligne par ligne :<br>
+        <ul> <li>Les lignes 3 à 9 définissent la taille du canvas, remplissent le canvas avec une couleur de fond légèrement transparente et dessinent un rectangle gris clair en haut de la toile.</li>
+         <li>Les lignes 11 à 15 dessinent un triangle en utilisant la méthode <span class="function">beginPath()</span> pour définir un nouveau chemin de dessin,<span class="function"> moveTo()</span> pour déplacer le point de départ du chemin, <span class="function">lineTo()</span> pour dessiner des segments de ligne et <span class="function">closePath()</span> pour fermer le chemin. Le triangle est rempli avec la couleur grise définie précédemment et bordé avec une épaisseur de ligne noire.</li>
+         <li>Les lignes 17 à 22 dessinent un autre triangle plus petit, en utilisant les mêmes méthodes de dessin que précédemment. Cette fois-ci, le triangle est rempli de noir à blanc en utilisant un gradient linéaire, et le contour est tracé avec une épaisseur de ligne qui utilise également le gradient linéaire.</li>
+         <li>Les lignes 24 à 33 créent un dégradé linéaire en utilisant la méthode <span class="function">createLinearGradient()</span>, définissant les couleurs et les arrêts de couleur dans le dégradé, puis dessinent le texte "Hello world" rempli avec ce dégradé.</li>
+         <li>Les lignes 35 à 40 créent une image d'ours en utilisant la méthode <span class="function">createElement()</span> pour créer un nouvel élément d'image HTML, définir sa source et utiliser la méthode <span class="function">onload() </span>pour s'assurer que l'image est chargée avant d'être dessinée sur le canvas.</li>
+         <li>Les lignes 42 à 48 dessinent une ligne diagonale à travers la toile avec un dégradé de couleur d'orange. <span class="function">moveTo()</span> et <span class="function">lineTo()</span> sont utilisés pour définir les points de début et de fin de la ligne, et le gradient est utilisé pour définir la couleur de la ligne.</li> </ul>
+        En résumé, ce code dessine une illustration simple mais colorée sur le canvas en utilisant des formes géométriques, des dégradés de couleurs, du texte et une image chargée.<br>
+        
+	</div>
+
+</body>
+</html>

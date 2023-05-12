@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Explication: Des ballons animés</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" type="image/gif" href="logo.png">
+</head>
+<body>
+	
+	<h1>Explication: Des ballons animés    </h1>
+	<div class="container-Explication">
+        
+On commence par définir la classe <span class="function">Balloon</span>  dans le fichier balloon.js pour représenter des ballons à afficher dans notre animation.<br>
+La classe a un constructeur qui prend cinq paramètres : <span class="function">x, y, r, c</span> et <span class="function">cD</span>, qui représentent respectivement la coordonnée horizontale, la coordonnée verticale, le rayon, la couleur et la couleur de fond du ballon.<br>
+La classe a également une méthode statique <span class="function"> numberToColor</span> qui prend un nombre comme paramètre et renvoie une chaîne de caractères représentant une couleur RGB. Cette méthode utilise l'algorithme de conversion du nombre en couleur qui consiste à utiliser les deux premiers chiffres pour les composantes rouge et verte, puis à ajouter ces deux chiffres pour la composante bleue. La méthode renvoie la couleur en format CSS <span class="function">rgb(r, g, b)</span>.<br>
+Enfin, la classe est exportée en tant que module par défaut, ce qui permet à d'autres parties de l'application d'importer cette classe.<br><br>
+
+
+
+On passe à notre script.js. Le code commence par importer la classe <span class="function">Balloon </span>depuis le fichier <span class="function">"./Balloon.js"</span>. Ensuite, il définit un objet <span class="function">coordinateMultipliers </span>qui contient trois fonctions qui multiplient respectivement les valeurs x, y et r d'un ballon par une constante afin de les adapter aux dimensions du canvas.<br>
+Ensuite, le code sélectionne l'élément HTML avec l'id "canvas" et définit sa largeur et sa hauteur à 2500 et 1000 pixels, respectivement. Puis, il obtient les données depuis un fichier JSON ("./data.json") en utilisant la méthode <span class="function">fetch </span>et les transforme en objet JavaScript avec la méthode<span class="function"> .json()</span>. En cas d'erreur, la variable <span class="function">data</span> sera un tableau vide.<br>
+Le code crée ensuite un tableau <span class="function">balloons</span> en appliquant la méthode <span class="function">map</span> sur les données<span class="function"> data</span>. Pour chaque élément de <span class="function">data</span>, il crée un nouvel objet <span class="function">Balloon</span> en utilisant la classe <span class="function">Balloon</span>, en appliquant les fonctions de<span class="function"> coordinateMultipliers </span> aux valeurs<span class="function"> x, y </span>et <span class="function">r</span>, en convertissant le nombre c en une couleur avec la méthode <span class="function">Balloon.numberToColor()</span>, et en spécifiant c comme propriété<span class="function"> colorNumber</span> de l'objet <span class="function">Balloon</span>.  <br>
+Le code définit également la propriété <span class="function">initialY</span> de chaque objet<span class="function"> Balloon</span> comme étant la hauteur du canvas. Les objets <span class="function">Balloon</span> ainsi créés sont ajoutés au tableau <span class="function">balloons</span>.  <br>
+De plus, le code définit une fonction <span class="function">drawCanvas()</span> qui remplit le canvas avec un gradient linéaire du noir vers le rouge, puis crée un second gradient linéaire pour les couleurs des ballons, en filtrant les couleurs uniques dans le tableau <span class="function">balloons </span>et en triant le résultat.<br>
+
+
+<ul> <li>On passe ensuite à la création d'un dégradé linéaire qui sera utilisé comme arrière-plan pour le dessin. La fonction <span class="function">createLinearGradient()</span> est appelée avec les coordonnées de début et de fin du dégradé, qui dans ce cas vont du haut de la toile à son bas. Deux couleurs sont ensuite ajoutées au dégradé à l'aide de la méthode <span class="function">addColorStop()</span>. La première couleur est le noir, qui sera la couleur de départ, et la seconde est le rouge, qui sera la couleur de fin.</li>
+<li>Ensuite, un deuxième dégradé linéaire est créé pour représenter la palette de couleurs des ballons. Pour chaque couleur de ballon, deux arrêts de couleur sont ajoutés au dégradé en utilisant la méthode <span class="function">addColorStop()</span>. Les arrêts sont espacés de manière égale pour que chaque couleur ait la même intensité. La couleur est convertie en format CSS à l'aide de la méthode <span class="function">numberToColor()</span> de l'objet Balloon.</li>
+<li>Une fois que le dégradé de la palette de couleurs a été créé, il est utilisé pour remplir un rectangle sur le canvas en utilisant la méthode <span class="function"> fillRect()</span>. Le rectangle a une position x de 50, une position y de 650, une largeur de 1950 et une hauteur de 100.</li>
+<li>Ensuite, un texte est ajouté pour chaque couleur de ballon. La couleur de remplissage du texte est définie sur blanc et la police de caractères est définie sur Arial avec une taille de police de 10px. Pour chaque couleur, le texte est dessiné en utilisant la méthode <span class="function">fillText() </span>à une position calculée en fonction de l'index de la couleur et du nombre total de couleurs.</li>
+<li>Un troisième dégradé linéaire est créé pour représenter un dégradé de couleurs allant du rouge au vert en passant par le jaune, le cyan, le bleu et le magenta. Les arrêts de couleur sont ajoutés de manière à obtenir un dégradé homogène. Ce dégradé est ensuite utilisé pour remplir un rectangle juste en dessous du rectangle de la palette de couleurs.</li>
+<li>Par suite, la couleur de la ligne de l'axe des abscisses est définie sur le vert. La méthode<span class="function"> beginPath() </span>est appelée pour commencer à dessiner la ligne, puis la méthode <span class="function">moveTo() </span>est appelée pour déplacer le stylo vers le point de départ de la ligne.La méthode <span class="function">lineTo() </span>est appelée pour dessiner la ligne elle-même, qui va de la position x = 25 à la position x = 1950 et la méthode  <span class="function">stroke()</span> est appelée pour dessiner la ligne.</li> </ul>
+
+
+On passe maintenant au chargement des données depuis un fichier JSON, création des instances de l'objet "Balloon" à partir de ces données, définition des dimensions du canvas, création des gradients de couleurs pour les ballons et le dessin d’un fond coloré.
+On définit plusieurs fonctions pour dessiner les ballons et leurs attributs sur le canvas. La fonction "draw" dessine un ballon individuel avec sa couleur respective, la fonction "drawValues" affiche les attributs du ballon en tant que texte à côté de ce ballon sur le canvas.
+Ensuite on utilise les fonctions "draw" et "drawValues" pour dessiner les ballons et leurs attributs sur le canvas en utilisant une animation en boucle continue. Chaque fois que la fonction "animate" est appelée, elle efface le canvas et redessine tous les ballons et leurs attributs avec les nouvelles positions.
+
+
+Traitons maintenant l'animation de ballons flottants. Les ballons sont ajoutés dynamiquement à l'aide d'un formulaire, en spécifiant les coordonnées x, y et le rayon du ballon, ainsi que sa couleur. Lorsque le formulaire est soumis, un nouvel objet Ballon est créé et ajouté à un tableau de ballons.
+La fonction d'animation <span class="function">animate()</span> est appelée une première fois avec <span class="function">requestAnimationFrame()</span> pour lancer la boucle d'animation. La boucle d'animation met à jour la position verticale de chaque ballon jusqu'à ce que chaque ballon atteigne sa hauteur maximale.
+La boucle d'animation vérifie également si l'animation est terminée en testant si la position verticale de tous les ballons est inférieure ou égale à leur hauteur initiale. Si ce n'est pas le cas, la boucle d'animation est appelée à nouveau avec <span class="function">requestAnimationFrame()</span>.
+Enfin, la position de la souris est détectée lorsque le curseur est déplacé sur le canvas, ce qui permet de mettre en évidence un ballon lorsque la souris passe au-dessus de celui-ci, en affichant ses attributs sur le côté du canvas.
+
+</div>
+
+</body>
+</html>

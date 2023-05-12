@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Tillana&display=swap" rel="stylesheet">
+	<script type="text/javascript" src="./Siteweb/script.js"></script>
+	<title>Projet GEMP</title>
+	<link rel="stylesheet" href="./Siteweb/style.css">
+	<link rel="icon" type="image/gif" href="./Siteweb/logo.png">
+</head>
+<body>
+	<div class="exos-list">
+	<div class="titre">Projet GEMP <span class="sous-titre">(Projet de programmation L3)</div></div>
+	
+	<div class="container">
+
+		 
+		<button onclick= "showPopup(1)" class="link"> Un aperçu de canvas - Difficulté: 1 </button><br>
+		 
+		<button onclick= "showPopup(2)" class="link"> Application Canvas: Paint - Difficulté: 3</button><br>
+		 
+		<button onclick= "showPopup(3)" class="link"> Animation Canvas: Ballons animés - Difficulté: 5 </button><br>
+		 
+		<button onclick= "showPopup(5)" class="link"> Application WebGL: La chasse à la souris - Difficulté: 6</button><br>
+
+		<button onclick= "showPopup(4)" class="link"> $1 Unistroke Recognizer - Difficulté: 8</button><br>
+		 
+		<button onclick= "showPopup(6)" class="link"> Application WebGL: Eclairage - Difficulté: 9</button><br>
+	</div>
+
+
+		<div id="popup1" class="popup">
+			<div class="popup-content">
+			  <span class="close" onclick="hidePopup(1)">&times;</span>
+			  <br><br>
+			  <span class ="back" onclick="hidePopup(1);showPopup(1)">Un aperçu de canvas</span> || 
+			  <span class ="back" onclick="hidePopup(1);showPopup(2)">Paint</span> || 
+			  <span class ="back" onclick="hidePopup(1);showPopup(3)">Ballons animés</span> || 
+			  <span class ="back" onclick="hidePopup(1);showPopup(5)">Chasse à la souris</span> || 
+			  <span class ="back" onclick="hidePopup(1);showPopup(4)">$1 Recognizer</span> || 
+			  <span class ="back" onclick="hidePopup(1);showPopup(6)">Eclairage </span>  
+
+			  <h1> Un aperçu de canvas </h1>
+
+			  	<h2>Documents utiles pour cet exercice:</h2>
+				  <ul><li>Le canvas et les <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D">fonctions</a> du contexte graphique</li>
+						<li>La <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Canvas_tutorial/Drawing_shapes">création d'objets graphiques et affichage</a> dans le contexte graphique</li>
+						<li>un petit résumé <a href="http://www.lirmm.fr/~mountaz/Faq/m_events/">gestion des évènements utilisateurs en javascript</a></li>
+						<li>et quelques exemples simples de <a href="https://developer.mozilla.org/fr/docs/DOM/event">callbacks</a></li>
+					</ul>
+					<h2> Questions: </h2> 
+					<ul><li>Si vous n'avez jamais utilisé le canvas, vous pouvez commencer par cet exercice:</li>
+						<li>en utilisant un canvas, cr&eacute;er et afficher<a href="Siteweb/exo1.png"> cette sc&egrave;ne</a>. NB: vous pouvez remplacer l'image par l'image de votre choix.
+						</li>
+			  </ul>
+			  <h3>Temps estimé: 2-5h</h3>
+			  <div class ="buttons-pop-containers">
+				<a href="./exercice-1/index.html"  class="link"> Un aperçu de canvas </a>
+				<a href="./Siteweb/Ex1.html"  class="link">Explications </a>
+			  </div>
+		</div>
+		</div>
+
+
+
+		<div id="popup2" class="popup">
+			<div class="popup-content">
+				<span class="close" onclick="hidePopup(2)">&times;</span>
+				<br><br>
+				<span class ="back" onclick="hidePopup(2);showPopup(1)">Un aperçu de canvas</span> || 
+				<span class ="back" onclick="hidePopup(2);showPopup(2)">Paint</span> || 
+				<span class ="back" onclick="hidePopup(2);showPopup(3)">Ballons animés</span> || 
+				<span class ="back" onclick="hidePopup(2);showPopup(5)">Chasse à la souris</span> || 
+				<span class ="back" onclick="hidePopup(2);showPopup(4)">$1 Recognizer</span> || 
+				<span class ="back" onclick="hidePopup(2);showPopup(6)">Eclairage </span>  
+  
+			  <h1> Paint  </h1>
+			  <h2>Documents utiles pour cet exercice:</h2>
+				  <ul><li>Le canvas et les <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D">fonctions</a> du contexte graphique</li>
+						<li>La <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Canvas_tutorial/Drawing_shapes">création d'objets graphiques et affichage</a> dans le contexte graphique</li>
+						<li>un petit résumé <a href="http://www.lirmm.fr/~mountaz/Faq/m_events/">gestion des évènements utilisateurs en javascript</a></li>
+						<li>et quelques exemples simples de <a href="https://developer.mozilla.org/fr/docs/DOM/event">callbacks</a></li>
+					</ul>
+					<h2> Questions: </h2> 
+ 
+		<p>Cet exercice consiste à afficher un canvas dans lequel l'utilisateur doit pouvoir dessiner en utilisant un dispositif de pointage.</p>
+		<ol>
+			<li>Pour commencer, cr&eacute;er un document HTML contenant un canvas.</li>
+			<li>Ajouter un gestionnaire d'évènements sur le canvas pour suivre les évènements du pointeur souris. </li>
+			<li>Utiliser les coordonnées données par les évènements pour afficher une ligne qui suit le pointeur. Le tracé de la ligne commence lorsque l'utilisateur appuie sur le bouton gauche de la souris et se termine lorsqu'il relâche ce bouton. </li>
+			<li>Durant le tracé, sauvegarder les points dans un tableau.</li>
+			<li>Comment faire pour exporter ce tableau de points dans un fichier (de sorte à rendre persistant un tracé réalisé)?</li>
+		</ol>
+		<h3>Temps estimé: 3-8h</h3>
+		<div class ="buttons-pop-containers">
+			  <a href="./exercice-2/canvas.html"  class="link"> Paint  </a>
+			  <a href="./Siteweb/Ex2.html"  class="link">Explications </a>
+			</div>
+			</div>
+	
+		</div>
+
+
+
+		<div id="popup3" class="popup">
+			<div class="popup-content">
+				<span class="close" onclick="hidePopup(3)">&times;</span>
+				<br><br>
+				<span class ="back" onclick="hidePopup(3);showPopup(1)">Un aperçu de canvas</span> || 
+				<span class ="back" onclick="hidePopup(3);showPopup(2)">Paint</span> || 
+				<span class ="back" onclick="hidePopup(3);showPopup(3)">Ballons animés</span> || 
+				<span class ="back" onclick="hidePopup(3);showPopup(5)">Chasse à la souris</span> || 
+				<span class ="back" onclick="hidePopup(3);showPopup(4)">$1 Recognizer</span> || 
+				<span class ="back" onclick="hidePopup(3);showPopup(6)">Eclairage </span>  
+  
+			  <h1> Création d'un graphique interactif avec des ballons colorés</h1>
+			  <h2> Liens utiles pour cet exercice </h2>
+
+			  <ul>
+				  <li>Les <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D">fonctions</a> du contexte graphique</li>
+				  <li>La <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Canvas_tutorial/Drawing_shapes">cr&eacute;ation d'objets graphiques et affichage</a> dans le contexte graphique</li>
+				  <li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/linear-gradient()"> <code>La m&eacute;thode de calcul de gradient lin&eacute;aire de couleur</code></a></li>
+				  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/createRadialGradient"> <code>La m&eacute;thode de calcul de gradient radial de couleur</code></a> et sa <a href="https://html.spec.whatwg.org/multipage/canvas.html">sp&eacute;cification</a></li>
+				  <li><a href="balloons.htm">Fichier utile</a> pour commencer le tp</li>
+			  </ul>
+	   
+		  
+	 <h2> Questions: </h2>    
+
+Dans cet exercice, vous allez créer une page web qui affiche un graphique interactif représentant des ballons colorés. Les utilisateurs pourront ajouter des ballons en fournissant des coordonnées X et Y, un rayon et un numéro de couleur, qui sera converti en couleur RGB.
+
+Voici les étapes à suivre pour réaliser l'exercice :
+		<ol>
+	
+	<li>Créez un fichier HTML `index.html` avec une structure de base incluant un titre, un lien vers un fichier JavaScript `script.js`, et des styles CSS internes pour les boutons et les inputs.
+	</li>
+	<li>Dans le fichier HTML, ajoutez un élément `canvas` pour dessiner le graphique et un formulaire avec des champs de saisie pour les coordonnées X et Y, le rayon et la couleur des ballons, ainsi qu'un bouton pour ajouter un ballon. 
+	</li>
+	<li>Créez un fichier JavaScript `Balloon.js` pour définir une classe `Balloon` avec un constructeur prenant en paramètres les coordonnées X et Y, le rayon, la couleur et le numéro de couleur du ballon. La classe `Balloon` devra également contenir une méthode statique pour convertir un numéro de couleur en une couleur RGB.
+	</li>		
+	<li>Dans le fichier JavaScript `script.js`, importez la classe `Balloon` et définissez les dimensions du canvas. Chargez les données des ballons depuis un fichier JSON (ou créez un tableau vide si le fichier n'existe pas) et créez des instances de la classe `Balloon` pour chaque ballon.
+	</li>
+	<li>Créez des fonctions pour dessiner le graphique, dessiner les ballons et afficher les valeurs des attributs des ballons sur le graphique.
+	</li>
+	<li>Implémentez une animation pour faire apparaître les ballons progressivement sur le graphique.
+	</li>
+	<li>Ajoutez un écouteur d'événements au formulaire pour créer et ajouter de nouveaux ballons au graphique lorsqu'un utilisateur soumet le formulaire.
+	</li>
+	<li>Ajoutez un écouteur d'événements au canvas pour détecter le survol des ballons avec la souris et afficher les valeurs des attributs des ballons survolés.
+	</li>
+	   </ol>
+	   Assurez-vous de bien tester votre code et de vérifier que toutes les fonctionnalités décrites ci-dessus fonctionnent correctement.
+	   <h3>Temps estimé: 10-16h</h3>
+	   <div class ="buttons-pop-containers">
+			  <a href="./exercice-3/src/index.html"  class="link">Ballons animés</a>
+			  <a href="./Siteweb/Ex3.html"  class="link">Explications </a>
+		</div>
+		</div>
+		</div>
+
+
+
+		<div id="popup4" class="popup">
+			<div class="popup-content">
+				<span class="close" onclick="hidePopup(4)">&times;</span>
+				<br><br>
+				<span class ="back" onclick="hidePopup(4);showPopup(1)">Un aperçu de canvas</span> || 
+				<span class ="back" onclick="hidePopup(4);showPopup(2)">Paint</span> || 
+				<span class ="back" onclick="hidePopup(4);showPopup(3)">Ballons animés</span> || 
+				<span class ="back" onclick="hidePopup(4);showPopup(5)">Chasse à la souris</span> || 
+				<span class ="back" onclick="hidePopup(4);showPopup(4)">$1 Recognizer</span> || 
+				<span class ="back" onclick="hidePopup(4);showPopup(6)">Eclairage </span>  
+  
+			  <h1> $1 Unistroke Recognizer </h1>
+			  <h2> Questions: </h2> 
+Dans cet exercice, vous allez implémenter un système de reconnaissance de gestes appelé $1 Recognizer. Votre programme doit être capable de reconnaître des gestes dessinés sur un canevas, de les comparer à des modèles pré-enregistrés et d'identifier le modèle qui correspond le mieux au geste dessiné.
+
+Pour cela, vous devrez créer les classes et les fonctions suivantes:
+<ol>
+<li> Une classe `Point` avec les méthodes suivantes:
+    <ul>- `getDistance(p1, p2)`: calcule et retourne la distance entre deux points `p1` et `p2`.</ul>
+    <ul>- `getPathLength(points)`: calcule et retourne la longueur totale d'un chemin formé par une liste de points `points`.</ul>
+	<ul>- Un constructeur qui prend deux arguments `x` et `y` pour initialiser les coordonnées d'un point.</ul>
+</li>
+   
+
+<li> Une classe `Gesture` avec les méthodes suivantes:
+	<ul>- `resampleGesture(gesture, numPoints)`: prend en entrée un objet `gesture` et un nombre `numPoints`, et retourne un nouvel objet `Gesture` dont les points sont rééchantillonnés pour correspondre au nombre de points demandé.</ul>
+	<ul>- `rotateGesture(gesture, angle)`: prend en entrée un objet `gesture` et un angle de rotation, et retourne un nouvel objet `Gesture` dont les points ont été tournés autour du centre de gravité de `gesture` par l'angle donné.</ul>
+   <ul>- Un constructeur qui prend deux arguments `name` et `points` pour initialiser le nom et les points d'un geste. La longueur du chemin du geste doit également être calculée et stockée.</ul>
+</li>
+<li> Une classe `Recognizer` avec les méthodes suivantes:
+	<ul>- Un constructeur qui prend en entrée une liste de modèles `templates` et un nombre `numPoints` (avec une valeur par défaut de 64). Les modèles doivent être convertis en objets `Gesture` et rééchantillonnés en fonction de la valeur de `numPoints`.</ul>
+	<ul>- `recognize(gesture)`: prend en entrée un objet `gesture`, et retourne le modèle qui correspond le mieux au geste dessiné. La comparaison doit être effectuée en faisant varier l'angle de rotation du geste et en calculant la distance moyenne entre les points correspondants du geste et du modèle.</ul>
+</li>
+</ol>
+En plus des classes ci-dessus, vous devrez implémenter un script pour interagir avec le canevas et les boutons de l'interface utilisateur. Le script doit permettre à l'utilisateur de dessiner sur le canevas, de reconnaître le geste dessiné, de nettoyer le canevas, d'ajouter un nouveau modèle et d'exporter les modèles actuels au format JSON.
+
+N'hésitez pas à vous référer aux indications et aux méthodes fournies pour vous guider dans votre implémentation. Bonne chance !
+
+			  
+			  Pour voir l'algorithme de 1$ cliquez <a href="https://faculty.washington.edu/wobbrock/pubs/uist-07.01.pdf" >ici</a>.<br>
+			  <h3>Temps estimé: 18-22h</h3>  
+			  <div class ="buttons-pop-containers"> 
+			  <a href="./one-dollar/index.html"  class="link"> 1$ implementation </a> 
+			  <a href="./Siteweb/OneDollar.html"  class="link">Explications </a>
+				</div>
+			</div>
+		</div>
+
+
+
+		
+		<div id="popup5" class="popup">
+			<div class="popup-content">
+				<span class="close" onclick="hidePopup(5)">&times;</span>
+				<br><br>
+				<span class ="back" onclick="hidePopup(5);showPopup(1)">Un aperçu de canvas</span> || 
+				<span class ="back" onclick="hidePopup(5);showPopup(2)">Paint</span> || 
+				<span class ="back" onclick="hidePopup(5);showPopup(3)">Ballons animés</span> || 
+				<span class ="back" onclick="hidePopup(5);showPopup(5)">Chasse à la souris</span> || 
+				<span class ="back" onclick="hidePopup(5);showPopup(4)">$1 Recognizer</span> || 
+				<span class ="back" onclick="hidePopup(5);showPopup(6)">Eclairage </span>  
+  
+			  <h1> Chasse à la souris </h1>
+			  <h2> Questions: </h2>
+			  Implémenter une fonctionnalité de jeu en utilisant Three.js. Le but du jeu est de faire chasser
+				la souris par le chat en évitant les cubes générés aléatoirement dans la scène.
+			  <ol>
+				<li>
+					Créez une scène Three.js avec un sol vert et une lumière ambiante blanche.
+				</li>
+
+				<li>
+					Chargez deux modèles dans la scène : un modèle de chat et un modèle de souris.
+				</li>
+				
+				<li>
+					Faites en sorte que la souris puisse être contrôlée avec les touches "arrow-up" ,
+					"arrow-down" , "arrow-left" and "arrow-right" du clavier. La souris doit se déplacer dans la
+					direction de sa rotation lorsqu'une touche est enfoncée.
+				</li>
+
+				<li>
+					Générez aléatoirement des cubes bleus dans la scène toutes les 2 secondes. Les cubes
+					doivent être générés à des positions aléatoires sur le sol.					
+				</li>
+
+				<li>
+					Faites en sorte que le chat poursuive la souris en se déplaçant à une vitesse aléatoire entre
+					0.05 et 0.17. La vitesse du chat doit être augmentée aléatoirement toutes les 5 à 10 secondes.
+				</li>
+
+				<li>
+					Définissez des limites pour la scène et faites en sorte que la souris tombe en dessous du sol
+					si elle sort des limites. Si la souris tombe en dessous du sol, la page doit être actualisée.					
+				</li>
+				<li>
+					Ajoutez une fonctionnalité de collision pour les cubes et la souris. Si la souris entre en
+					collision avec un cube, elle doit revenir à sa position précédente avant la collision.
+				</li>
+				<li>
+					Si le chat attrape la souris (c’est-à-dire que la distance entre eux est inférieure à 1 unité), la
+					page doit être actualisée.
+				</li>
+				<li>
+					Faites en sorte que la caméra suive la souris et regarde le point médian entre la souris et le
+					chat.					
+				</li>
+				
+			  </ol> 
+			    Pour cet exercice, vous devrez utiliser des concepts de base de Three.js tels que la création de
+				scènes, l’utilisation de caméras, le chargement de modèles, le contrôle de la position et de la
+				rotation des objets, la détection de collision et la génération d’objets aléatoires.
+				<h3>Temps estimé: 15-18h</h3>
+			  <div class ="buttons-pop-containers"> 
+			  	<a href="./Chasse-a-la-souris/src/index.html"  class="link">Jouer !</a>
+			  	<a href="./Siteweb/WebGL.html"  class="link">Explications </a>
+			  </div>
+			</div>
+		</div>
+
+
+
+		<div id="popup6" class="popup">
+			<div class="popup-content">
+				<span class="close" onclick="hidePopup(6)">&times;</span>
+				<br><br>
+				<span class ="back" onclick="hidePopup(6);showPopup(1)">Un aperçu de canvas</span> || 
+				<span class ="back" onclick="hidePopup(6);showPopup(2)">Paint</span> || 
+				<span class ="back" onclick="hidePopup(6);showPopup(3)">Ballons animés</span> || 
+				<span class ="back" onclick="hidePopup(6);showPopup(5)">Chasse à la souris</span> || 
+				<span class ="back" onclick="hidePopup(6);showPopup(4)">$1 Recognizer</span> || 
+				<span class ="back" onclick="hidePopup(6);showPopup(6)">Eclairage </span>  
+  
+			  <h1> Eclairage avec Three.js </h1>
+			  <h2> Liens utiles pour cet exercice </h2>
+
+			  <ul>
+				  <li>La <a href="https://threejs.org/docs/">documentation de Three.js</a> </li>
+				  <li>Les <a href="https://threejs.org/examples/#webgl_materials_variations_phong">démos</a> de paramétrage de matériaux de Three.js</li>
+  
+			  </ul>
+
+			  <h2> Questions: </h2> 
+			  <ol>
+				  <li>
+					  Créer la scène en utilisant quelques objets de base (tore ou cône) et mettre en place l'éclairage
+					  avec une lumière ambiante, une lumière directionnelle et des matériaux de type <code>MeshLambertMaterial</code>.
+					  Afficher le résultat dans la première fenêtre (fenêtre de la vue de l'utilisateur).
+				  </li>
+				  <li>Dans la deuxième fenêtre (fenêtre de visualisation des artefacts "invisibles" dans la scène), afficher les caractéristiques courantes de l'éclairage en mode "world-space view", en affichant les paramètres invisibles pertinents (direction de l'éclairage directionnel, repère du monde, type de projection, etc)').</li>
+				  <li>
+					  Dans la troisième fenêtre (fenêtre de contrôle), afficher en html (ou dans une autre scène Three.js),
+					  les <em>extraits</em> de code permettant de définir les paramètres de l'éclairage courant.
+				  </li>
+				  <li>
+					  Faire en sorte que ces paramètres soient modifiables de manière interactive avec les effets de leur modification
+					  visibles dans les deux autres fenêtres.
+				  </li>
+				  <li>Ajouter la possibilité de changer le type de l'éclairage dans la fenêtre de contrôle et mettre à jour les autres fenêtres en conséquence.</li>
+				  <li>Ajouter la possibilité de changer le type de matériau dans la fenêtre de contrôle et mettre à jour les autres fenêtres en conséquence.</li>
+				  <li>Ajouter la possibilité de changer les objets de base qui composent la scène en proposant un choix raisonable d'objets tests.</li>
+			  </ol>
+
+			  <h3>Temps estimé: 20-25h</h3>
+			  <div class ="buttons-pop-containers"> 
+			  	<a href="./Eclairage/Eclairage.html"  class="link"> Eclairage avec Three.js </a>
+			  	<a href="./Siteweb/Eclairage.html"  class="link">Explications </a>
+			  </div>
+			</div>
+		</div>
+
+	</div>
+	<footer>
+		<div class="teacher"><strong>Encadrante:</strong><br>Mountaz Hascoët</div>
+		<div class="students"><strong>Etudiants:</strong><br>Gurgun Dayioglu<br>Mohamad Satea Almallouhi<br>Mariem El Gargouri<br>Salma Ouadi</div>
+	  </footer>
+</body>
+</html>

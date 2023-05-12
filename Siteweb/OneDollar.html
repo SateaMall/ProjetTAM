@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Explication: One dollar recognizer</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" type="image/gif" href="logo.png">
+</head>
+<body>
+	<h1>Explication: One dollar recognizer </h1>
+	<div class="container-Explication">
+
+Le code présenté est une implémentation du $1 Recognizer, un algorithme de reconnaissance de gestes 2D basé sur une approche géométrique. Cet algorithme permet de reconnaître des gestes dessinés par l'utilisateur et de les comparer à un ensemble de modèles pré-enregistrés. Il est composé de plusieurs classes : Point, Gesture et Recognizer. Voici un résumé des différentes classes et de leur fonctionnement :
+<ol>
+<li>Point : Cette classe représente un point 2D avec des coordonnées x et y. Elle fournit des méthodes statiques pour calculer la distance entre deux points et la longueur totale d'un chemin de points.</li> 
+<li> Gesture : Cette classe représente un geste, composé d'un nom et d'un ensemble de points. Elle fournit des méthodes pour effectuer des opérations géométriques sur le geste, telles que la rotation, la mise à l'échelle, la translation vers l'origine et la rééchantillonnage des points.</li> 
+<li> Recognizer : Cette classe est le cœur de l'algorithme de reconnaissance de gestes. Elle prend en entrée un ensemble de modèles (gestes pré-enregistrés) et fournit des méthodes pour reconnaître un nouveau geste, en le comparant aux modèles existants. La reconnaissance est basée sur la recherche de la meilleure correspondance entre le geste et les modèles, en minimisant la distance moyenne entre les points correspondants.</li> 
+</ol>
+Le fichier script.js est le point d'entrée de l'application et gère l'interaction avec l'utilisateur. Il charge les modèles de gestes à partir d'un fichier JSON, crée une instance de la classe Recognizer et gère les événements de dessin sur un élément canvas HTML. Lorsque l'utilisateur dessine un geste, il est comparé aux modèles pré-enregistrés à l'aide de la méthode `recognize` de l'instance Recognizer.
+<br>
+Voici un résumé des étapes de reconnaissance :
+<ol>
+	<li>  L'utilisateur dessine un geste sur le canvas.</li> 
+	<li>  Le geste est capturé sous la forme d'une séquence de points.</li> 
+	<li>  Le geste est prétraité en effectuant les opérations suivantes : rééchantillonnage, mise à l'échelle, translation vers l'origine.</li> 
+	<li>  Le geste prétraité est comparé à l'ensemble des modèles pré-enregistrés en utilisant la méthode `recognize`.</li> 
+	<li>  La méthode `recognize` recherche la meilleure correspondance en minimisant la distance moyenne entre les points correspondants du geste et des modèles. La recherche est effectuée en utilisant une recherche par sections dorées pour trouver l'angle de rotation optimal.</li> 
+	<li>  La méthode `recognize` renvoie le nom du modèle qui correspond le mieux au geste dessiné, ainsi que le score de correspondance.</li> 
+</ol>
+L'application permet également d'ajouter de nouveaux modèles en capturant des gestes dessinés par l'utilisateur et de les exporter sous forme de fichier JSON pour une utilisation ultérieure.
+	</div>
+
+</body>
+</html>

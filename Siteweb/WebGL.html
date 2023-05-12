@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Explication: Chasse à la sourris </title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" type="image/gif" href="logo.png">
+</head>
+<body>
+	<h1>Explication: Chasse à la sourris  </h1>
+	<div class="container">
+	
+
+Ce code crée un jeu simple où une souris est poursuivie par un chat sur une scène en 3D. Voici une explication de chaque partie du code :
+<ol>
+	<li> Importation des modules nécessaires : THREE.js est importé pour gérer la 3D et le GLTFLoader pour charger les modèles 3D.</li>
+
+	<li> Configuration de la scène, de la caméra et du rendu : Une scène, une caméra et un rendu WebGL sont créés. La caméra est positionnée en hauteur, et une lumière ambiante est ajoutée à la scène.</li>
+
+	<li> Configuration du sol : Un plan géométrique est créé pour le sol avec une texture verte. Le sol est ajouté à la scène.</li>
+
+	<li> Configuration des contrôles : Un objet de contrôles est défini pour permettre le mouvement de la souris. Les événements "keydown" et "keyup" du clavier sont utilisés pour détecter les mouvements.</li>
+
+	<li> Configuration du chargeur et chargement des modèles 3D de la souris et du chat : Le GLTFLoader est utilisé pour charger les modèles 3D. Une fois chargés, les modèles sont ajoutés à la scène avec une position et une échelle appropriées.</li>
+
+	<li> Configuration de la vitesse de poursuite : La vitesse de poursuite du chat est configurée pour changer aléatoirement entre 0,05 et 0,17 toutes les 5 à 10 secondes.</li>
+
+	<li> Configuration de l'apparition des cubes : Les cubes apparaissent à intervalles réguliers, avec une augmentation exponentielle de la fréquence d'apparition. Les cubes sont ajoutés à la scène et stockés dans un tableau.</li>
+
+	<li> Vérification des collisions entre la souris et les cubes : Une fonction est définie pour vérifier si la souris entre en collision avec l'un des cubes.</li>
+
+	<li> Vérification si la souris est hors limites : Une fonction est définie pour vérifier si la souris sort du terrain.</li>
+
+	<li> Boucle d'animation : La boucle d'animation est définie pour mettre à jour les positions de la souris et du chat, gérer les collisions, vérifier si la souris est hors limites, ajuster la caméra, mettre à jour la vitesse de poursuite et générer des cubes. Si la souris sort du terrain ou si le chat attrape la souris, la page est actualisée pour recommencer le jeu.</li>
+
+	<li> Enfin, un intervalle est utilisé pour vérifier si les modèles 3D de la souris et du chat ont été chargés. Une fois chargés, la boucle d'animation est lancée et l'intervalle est supprimé.</li>
+</ol>
+</div>
+
+</body>
+</html>

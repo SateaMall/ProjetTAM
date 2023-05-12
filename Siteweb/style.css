@@ -1,0 +1,142 @@
+.function{
+  color: rgb(2, 153, 35);
+}
+body{
+ 
+
+  background-image: url(back.jpg);
+  padding: 50px;
+  font-size: 20px;
+  text-align: left;
+}
+
+.buttons-pop-containers{
+  padding-top: 50px;
+  text-align: center;
+}
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+.popup-content {
+    background-color: #f5f3f3;
+    margin: 10% auto;
+    padding: 50px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  .back{
+    font-size: 24px;
+    font-weight: bold;
+    color:slateblue
+  }
+  .back:hover,
+.back:focus {
+    color: #f14d4d;
+    text-decoration: none;
+    cursor: pointer;
+  }
+.close {
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+ 
+  }
+  
+.close:hover,
+.close:focus {
+    color: #f14d4d;
+    text-decoration: none;
+    cursor: pointer;
+  }
+.titre{
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+  font-size: 60px;
+}
+.sous-titre{
+  font-size: 23px;
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+  
+}
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;		
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+}
+.container-Explication{
+    padding: 5rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  min-height: 50vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: calc(5px + 2vmin);
+  color: black;
+  height: 100%;
+}
+.container {
+  padding: 2rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: calc(5px + 2vmin);
+  color: black;
+  height: 100%;
+}
+
+.link {
+    font-family: 'Oswald', sans-serif;
+    display: inline-block;
+    padding: 20px;
+    margin: 15px;
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #888888;
+    cursor: pointer;
+    background-color:#137c36;
+    color: #ffffff;
+    border:none;
+    border-radius:10px;
+    width: 22em;
+    text-align: center;
+}
+
+.link:hover {
+    background-color: #664c29;
+    color: rgb(255, 255, 255);
+}
+footer {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #333;
+  font-size: 16px;
+  border-top: 1px solid black;
+}
+.teacher, .students {
+  text-align: left;
+  width: 50%;
+
+}

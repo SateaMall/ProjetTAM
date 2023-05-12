@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Explication: Paint </title>
+	<link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/gif" href="logo.png">
+</head>
+<body>
+	<h1>Explication: Paint     </h1>
+	<div class="container-Explication">
+        Ce code permet de dessiner sur un canvas HTML5 en utilisant la souris. Les fonctionnalités incluent le choix de la couleur et de l'épaisseur du trait, l'effacement du contenu du canvas, et l'exportation des données de dessin en format JSON.<br>
+        Le code commence par la récupération des éléments HTML canvas, toolbar et des contextes 2D pour le dessin. Ensuite, il détermine la position du canvas par rapport au coin supérieur gauche de la fenêtre d'affichage, puis il ajuste la taille du canvas en fonction de la taille de la fenêtre.<br>
+        Le code utilise une variable <span class="function">isPainting</span> pour suivre l'état de la souris (enfoncée ou relâchée), une variable <span class="function">lineWidth</span> pour stocker l'épaisseur du trait, et les variables <span class="function">startX</span> et <span class="function">startY</span> pour stocker la position initiale du pointeur de la souris lorsqu'elle est enfoncée.<br>
+        Le code ajoute deux gestionnaires d'événements à la toolbar, un pour l'événement click et un pour l'événement change. Lorsque l'utilisateur clique sur le bouton "clear" de la toolbar, le code efface tout le contenu du canvas. Lorsque l'utilisateur change la valeur du champ de formulaire pour la couleur de la ligne ou l'épaisseur de la ligne, le code met à jour le contexte 2D en conséquence.<br>
+        Le code ajoute également trois gestionnaires d'événements à l'élément canvas : un pour l'événement mousedown, un pour l'événement mouseup et un pour l'événement mousemove. Lorsque l'utilisateur enfonce le bouton gauche de la souris sur le canvas, le code active le dessin en stockant les coordonnées initiales et en mettant la variable<span class="function"> isPainting </span>à true. Lorsque l'utilisateur relâche le bouton gauche de la souris, le code désactive le dessin en remettant la variable <span class="function">isPainting</span> à false et en fermant le chemin actuel avec <span class="function">ctx.stroke()</span> et <span class="function">ctx.beginPath()</span>. Enfin, lorsque l'utilisateur bouge la souris sur le canvas avec le bouton gauche de la souris enfoncé, le code dessine le chemin en fonction de la position actuelle de la souris.<br>
+        Le code ajoute également un gestionnaire d'événement au bouton "export" pour exporter les données de dessin en format JSON. Le code utilise <span class="function"> ctx.getImageData </span>pour récupérer les données de pixels du canvas et les convertit en une série de coordonnées x et y pour chaque pixel qui a une opacité supérieure à zéro. Les coordonnées sont stockées dans un tableau, puis converties en format JSON. Enfin, le code crée un objet Blob à partir des données JSON et crée un lien de téléchargement pour l'utilisateur.<br>
+        
+	</div>
+
+</body>
+</html>
