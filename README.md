@@ -1,4 +1,4 @@
-# TER : Programmation graphique interactive et animation pour le web (javascript et canvas 2D)
+# TER : Programmation graphique interactive et animation pour le web (javascript, three.js et canvas 2D)
 Projet TER L3 Informatique - Montpellier
 
 ## Encadrante
